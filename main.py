@@ -1,4 +1,6 @@
 import sql_lite
 
 SQL_DB = sql_lite.Sql('/home/pala/mydb')
-SQL_DB.add_data('2017-12-12 18:00', 's1_teplotaa', '23.3')
+# SQL_DB.add_data('2017-12-13 20:00', 's1_teplotaas', '25.3')
+print(SQL_DB.get_sql_data("20"))
+SQL_DB.close_db()
