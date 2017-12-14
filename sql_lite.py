@@ -53,7 +53,7 @@ class Sql:
     def get_sql_data(self, hours):
         '''Get sql data for all sensors for specified time'''
         data = self.cursor.execute(
-            "select time, sensor_name, sensor_value from sensor_data inner join sensor on sensor.rowid = sensor_data.sensor_id where time >= datetime('now', '-" + hours + " hours');")
+            "select time, sensor_name, sensor_value from sensor_data inner join sensor on sensor.rowid = sensor_data.sensor_id where time >= datetime('now', ? )", (hours,))
         return data.fetchall()
 
     def close_db(self):
